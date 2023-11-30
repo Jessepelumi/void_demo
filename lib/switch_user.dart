@@ -22,6 +22,14 @@ class _Switch_userState extends State<Switch_user> {
     String userInfo = "Jeolad";
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      resizeToAvoidBottomInset: true,
+      appBar: AppBar(
+        leading: BackButton(
+          color: Colors.white,
+        ),
+        forceMaterialTransparency: true,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -29,53 +37,24 @@ class _Switch_userState extends State<Switch_user> {
               height: MediaQuery.of(context).size.height * 0.5,
               //child: BackButton(),
               child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        "https://img.freepik.com/free-vector/purple-circle-pattern-background-vector_53876-77826.jpg?size=626&ext=jpg&ga=GA1.1.1919089670.1695660544&semt=sph"),
-                    fit: BoxFit.cover,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(
+                          "https://img.freepik.com/free-vector/purple-circle-pattern-background-vector_53876-77826.jpg?size=626&ext=jpg&ga=GA1.1.1919089670.1695660544&semt=sph"),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                child: SafeArea(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 4),
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: Colors.grey[600],
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              child: BackButton(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
+                  child: Container(
+                    child: Center(
+                      child: Text(
+                        "VOID",
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                          fontSize: 20.0,
                         ),
                       ),
-                      Expanded(
-                        child: Center(
-                          child: Text(
-                            "VOID",
-                            style: TextStyle(
-                              color: Colors.grey[600],
-                              fontSize: 20.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                    ),
+                  )),
             ),
             Container(
               padding: EdgeInsets.all(15.0),

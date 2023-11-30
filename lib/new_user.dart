@@ -28,6 +28,14 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      resizeToAvoidBottomInset: true,
+      appBar: AppBar(
+        leading: BackButton(
+          color: Colors.white,
+        ),
+        forceMaterialTransparency: true,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -42,43 +50,15 @@ class _SignupState extends State<Signup> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                child: SafeArea(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 4),
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: Colors.grey[600],
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              child: BackButton(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      "VOID",
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 20.0,
                       ),
-                      Expanded(
-                        child: Center(
-                          child: Text(
-                            "VOID",
-                            style: TextStyle(
-                              color: Colors.grey[600],
-                              fontSize: 20.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),
