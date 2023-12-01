@@ -7,6 +7,8 @@ import 'package:void_demo/onboarding.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
+    // darkTheme: ThemeData.dark(),
+    // themeMode: ThemeMode.dark,
     home: Onboarding(),
   ));
 }
