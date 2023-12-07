@@ -18,21 +18,6 @@ class _SignupState extends State<Signup> {
   final password = TextEditingController();
   final confrimPassword = TextEditingController();
 
-  // bool _obscureText = true;
-  // void _togglePassword() {
-  //   setState(() {
-  //     _obscureText = !_obscureText;
-  //   });
-  // }
-
-  //confirm password visibility state management
-  // bool _obscureText2 = true;
-  // void _toggleConfirmPassword() {
-  //   setState(() {
-  //     _obscureText2 = !_obscureText2;
-  //   });
-  // }
-
   //form validation
   final _formKey = GlobalKey<FormState>();
   final isLoading = false;

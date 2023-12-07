@@ -11,13 +11,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  // bool _obscureText = true;
-  // void _togglePassword() {
-  //   setState(() {
-  //     _obscureText = !_obscureText;
-  //   });
-  // }
-
   //form validation
   final _formKey = GlobalKey<FormState>();
   final isLoading = false;

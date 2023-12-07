@@ -12,13 +12,6 @@ class Switch_user extends StatefulWidget {
 }
 
 class _Switch_userState extends State<Switch_user> {
-  // bool _obscureText = true;
-  // void _togglePassword() {
-  //   setState(() {
-  //     _obscureText = !_obscureText;
-  //   });
-  // }
-
   //form validation
   final _formKey = GlobalKey<FormState>();
   final isLoading = false;
