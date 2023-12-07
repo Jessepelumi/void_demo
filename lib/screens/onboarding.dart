@@ -1,5 +1,5 @@
-import 'package:void_demo/new_user.dart';
-import 'package:void_demo/switch_user.dart';
+import 'package:void_demo/screens/new_user.dart';
+import 'package:void_demo/screens/switch_user.dart';
 //import 'package:firstflutter/welcome_back.dart';
 import 'package:flutter/material.dart';
 

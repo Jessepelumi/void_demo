@@ -1,37 +1,22 @@
-import 'package:void_demo/custom_textfield.dart';
-import 'package:void_demo/switch_user.dart';
+import 'package:void_demo/screens/switch_user.dart';
 import 'package:flutter/material.dart';
+import 'package:void_demo/widgets/custom_textfield.dart';
+import 'package:void_demo/widgets/validators.dart';
 
-import 'validators.dart';
-
-class Signup extends StatefulWidget {
-  const Signup({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<Signup> createState() => _SignupState();
+  State<Login> createState() => _LoginState();
 }
 
-class _SignupState extends State<Signup> {
-  //password visibility state management
-
-  final email = TextEditingController();
-  final password = TextEditingController();
-  final confrimPassword = TextEditingController();
-
-  bool _obscureText = true;
-  void _togglePassword() {
-    setState(() {
-      _obscureText = !_obscureText;
-    });
-  }
-
-  //confirm password visibility state management
-  bool _obscureText2 = true;
-  void _toggleConfirmPassword() {
-    setState(() {
-      _obscureText2 = !_obscureText2;
-    });
-  }
+class _LoginState extends State<Login> {
+  // bool _obscureText = true;
+  // void _togglePassword() {
+  //   setState(() {
+  //     _obscureText = !_obscureText;
+  //   });
+  // }
 
   //form validation
   final _formKey = GlobalKey<FormState>();
@@ -46,6 +31,8 @@ class _SignupState extends State<Signup> {
 
   @override
   Widget build(BuildContext context) {
+    String username = "Jeolad";
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       resizeToAvoidBottomInset: true,
@@ -56,30 +43,29 @@ class _SignupState extends State<Signup> {
         forceMaterialTransparency: true,
       ),
       body: Column(
-        children: [
+        children: <Widget>[
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.45,
+            height: MediaQuery.of(context).size.height * 0.5,
             //child: BackButton(),
             child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                      "https://img.freepik.com/free-vector/purple-circle-pattern-background-vector_53876-77826.jpg?size=626&ext=jpg&ga=GA1.1.1919089670.1695660544&semt=sph"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Container(
-                child: Center(
-                  child: Text(
-                    "VOID",
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 20.0,
-                    ),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                        "https://img.freepik.com/free-vector/purple-circle-pattern-background-vector_53876-77826.jpg?size=626&ext=jpg&ga=GA1.1.1919089670.1695660544&semt=sph"),
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
-            ),
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      "VOID",
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                )),
           ),
           SingleChildScrollView(
             child: Form(
@@ -92,7 +78,7 @@ class _SignupState extends State<Signup> {
                     Container(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        "Welcome to VOID",
+                        "Welcome back, ${username}",
                         style: TextStyle(
                           fontSize: 20.0,
                         ),
@@ -102,19 +88,8 @@ class _SignupState extends State<Signup> {
                       height: 20.0,
                     ),
                     CustomTextFormField(
-                      label: "Email",
-                      hintText: "Enter your email address",
-                      validator: emailValidation,
-                    ),
-                    CustomTextFormField(
                       label: "Password",
                       hintText: "Enter your password",
-                      isPassword: true,
-                      validator: passwordValidation,
-                    ),
-                    CustomTextFormField(
-                      label: "Confirm Password",
-                      hintText: "Enter your password again",
                       isPassword: true,
                       validator: passwordValidation,
                     ),
@@ -134,7 +109,7 @@ class _SignupState extends State<Signup> {
                         ),
                         //style:,
                         child: Text(
-                          "CREATE ACCOUNT",
+                          "LOG IN",
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -142,33 +117,57 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     SizedBox(
-                      height: 30.0,
+                      height: 50.0,
                     ),
                     Container(
+                      alignment: Alignment.topCenter,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Member of Void?"),
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
                           GestureDetector(
                             onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => Switch_user())),
                             child: Text(
-                              " Log in",
+                              "Switch account",
                               style: TextStyle(
                                 color: Colors.deepPurple[400],
                               ),
                             ),
                           ),
+                          Text(
+                            "Forgot password?",
+                            style: TextStyle(
+                              color: Colors.deepPurple[400],
+                            ),
+                          ),
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Container(
+                      child: RichText(
+                        text: TextSpan(
+                            text: "Not ${username}?",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: " Sign up",
+                                style: TextStyle(color: Colors.deepPurple[400]),
+                              ),
+                            ]),
+                      ),
+                    )
                   ],
                 ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );
