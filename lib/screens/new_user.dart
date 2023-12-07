@@ -35,7 +35,7 @@ class _SignupState extends State<Signup> {
       extendBodyBehindAppBar: true,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        leading: BackButton(
+        leading: const BackButton(
           color: Colors.white,
         ),
         forceMaterialTransparency: true,
@@ -46,21 +46,19 @@ class _SignupState extends State<Signup> {
             height: MediaQuery.of(context).size.height * 0.45,
             //child: BackButton(),
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
                       "https://img.freepik.com/free-vector/purple-circle-pattern-background-vector_53876-77826.jpg?size=626&ext=jpg&ga=GA1.1.1919089670.1695660544&semt=sph"),
                   fit: BoxFit.cover,
                 ),
               ),
-              child: Container(
-                child: Center(
-                  child: Text(
-                    "VOID",
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 20.0,
-                    ),
+              child: Center(
+                child: Text(
+                  "VOID",
+                  style: TextStyle(
+                    color: Colors.grey[600],
+                    fontSize: 20.0,
                   ),
                 ),
               ),
@@ -71,39 +69,39 @@ class _SignupState extends State<Signup> {
               key: _formKey,
               autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Container(
-                padding: EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Column(
                   children: <Widget>[
                     Container(
                       alignment: Alignment.topLeft,
-                      child: Text(
+                      child: const Text(
                         "Welcome to VOID",
                         style: TextStyle(
                           fontSize: 20.0,
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       label: "Email",
                       hintText: "Enter your email address",
                       validator: emailValidation,
                     ),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       label: "Password",
                       hintText: "Enter your password",
                       isPassword: true,
                       validator: passwordValidation,
                     ),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       label: "Confirm Password",
                       hintText: "Enter your password again",
                       isPassword: true,
                       validator: passwordValidation,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
                     SizedBox(
@@ -118,7 +116,7 @@ class _SignupState extends State<Signup> {
                           backgroundColor: Colors.deepPurple[400],
                         ),
                         //style:,
-                        child: Text(
+                        child: const Text(
                           "CREATE ACCOUNT",
                           style: TextStyle(
                             color: Colors.white,
@@ -126,28 +124,26 @@ class _SignupState extends State<Signup> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30.0,
                     ),
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Member of Void?"),
-                          GestureDetector(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Switch_user())),
-                            child: Text(
-                              " Log in",
-                              style: TextStyle(
-                                color: Colors.deepPurple[400],
-                              ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("Member of Void?"),
+                        GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SwitchUser())),
+                          child: Text(
+                            " Log in",
+                            style: TextStyle(
+                              color: Colors.deepPurple[400],
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

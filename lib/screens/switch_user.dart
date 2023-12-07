@@ -4,14 +4,14 @@ import 'package:void_demo/screens/new_user.dart';
 import 'package:void_demo/widgets/custom_textfield.dart';
 import 'package:void_demo/widgets/validators.dart';
 
-class Switch_user extends StatefulWidget {
-  const Switch_user({super.key});
+class SwitchUser extends StatefulWidget {
+  const SwitchUser({super.key});
 
   @override
-  State<Switch_user> createState() => _Switch_userState();
+  State<SwitchUser> createState() => _SwitchUserState();
 }
 
-class _Switch_userState extends State<Switch_user> {
+class _SwitchUserState extends State<SwitchUser> {
   //form validation
   final _formKey = GlobalKey<FormState>();
   final isLoading = false;
@@ -31,7 +31,7 @@ class _Switch_userState extends State<Switch_user> {
       extendBodyBehindAppBar: true,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        leading: BackButton(
+        leading: const BackButton(
           color: Colors.white,
         ),
         forceMaterialTransparency: true,
@@ -42,21 +42,19 @@ class _Switch_userState extends State<Switch_user> {
             height: MediaQuery.of(context).size.height * 0.5,
             //child: BackButton(),
             child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: NetworkImage(
                         "https://img.freepik.com/free-vector/purple-circle-pattern-background-vector_53876-77826.jpg?size=626&ext=jpg&ga=GA1.1.1919089670.1695660544&semt=sph"),
                     fit: BoxFit.cover,
                   ),
                 ),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      "VOID",
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: 20.0,
-                      ),
+                child: Center(
+                  child: Text(
+                    "VOID",
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontSize: 20.0,
                     ),
                   ),
                 )),
@@ -66,33 +64,33 @@ class _Switch_userState extends State<Switch_user> {
               key: _formKey,
               autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Container(
-                padding: EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Column(
                   children: <Widget>[
                     Container(
                       alignment: Alignment.topLeft,
-                      child: Text(
+                      child: const Text(
                         "A warm VOID welcome",
                         style: TextStyle(
                           fontSize: 20.0,
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       label: "Email",
                       hintText: "Enter your email",
                       validator: emailValidation,
                     ),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       label: "Password",
                       hintText: "Enter your password",
                       isPassword: true,
                       validator: passwordValidation,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
                     SizedBox(
@@ -107,7 +105,7 @@ class _Switch_userState extends State<Switch_user> {
                           backgroundColor: Colors.deepPurple[400],
                         ),
                         //style:,
-                        child: Text(
+                        child: const Text(
                           "LOG IN",
                           style: TextStyle(
                             color: Colors.white,
@@ -115,7 +113,7 @@ class _Switch_userState extends State<Switch_user> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30.0,
                     ),
                     Container(
@@ -127,9 +125,9 @@ class _Switch_userState extends State<Switch_user> {
                             onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Login())),
+                                    builder: (context) => const Login())),
                             child: Text(
-                              "$userInfo",
+                              userInfo,
                               style: TextStyle(
                                 color: Colors.deepPurple[400],
                               ),
@@ -144,28 +142,26 @@ class _Switch_userState extends State<Switch_user> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("! Member of VOID?"),
-                          GestureDetector(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Signup())),
-                            child: Text(
-                              " Sign up",
-                              style: TextStyle(
-                                color: Colors.deepPurple[400],
-                              ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("! Member of VOID?"),
+                        GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Signup())),
+                          child: Text(
+                            " Sign up",
+                            style: TextStyle(
+                              color: Colors.deepPurple[400],
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

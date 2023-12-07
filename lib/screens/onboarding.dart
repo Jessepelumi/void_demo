@@ -18,7 +18,7 @@ class _OnboardingState extends State<Onboarding> {
         child: SizedBox(
           height: MediaQuery.of(context).size.height * 1.0,
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
                     "https://img.freepik.com/free-vector/purple-circle-pattern-background-vector_53876-77826.jpg?size=626&ext=jpg&ga=GA1.1.1919089670.1695660544&semt=sph"),
@@ -40,7 +40,7 @@ class _OnboardingState extends State<Onboarding> {
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(15.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
@@ -51,7 +51,7 @@ class _OnboardingState extends State<Onboarding> {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Signup())),
+                                    builder: (context) => const Signup())),
                             style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0),
@@ -67,40 +67,40 @@ class _OnboardingState extends State<Onboarding> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10.0,
                         ),
                         SizedBox(
                           width: double.infinity,
                           height: 50.0,
                           child: TextButton.icon(
-                            label: Text(
+                            label: const Text(
                               "Go to your account",
                               style: TextStyle(
                                 color: Colors.white,
                               ),
                             ),
-                            icon: Icon(Icons.arrow_circle_right),
+                            icon: const Icon(Icons.arrow_circle_right),
                             style: TextButton.styleFrom(
                               iconColor: Colors.white,
                             ),
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Switch_user())),
+                                    builder: (context) => const SwitchUser())),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20.0,
                         ),
-                        Text(
+                        const Text(
                           "by VOIDstudios",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10.0,
                         ),
                       ],

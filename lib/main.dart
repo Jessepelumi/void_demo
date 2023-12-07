@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:void_demo/screens/onboarding.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     // darkTheme: ThemeData.dark(),
     // themeMode: ThemeMode.dark,
